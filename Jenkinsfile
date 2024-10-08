@@ -2,12 +2,14 @@ pipeline {
   environment {
     dockerimagename = "mlowe9999/react-app"
     dockerImage = ""
+    githubCredential = 'github-credentials'
   }
   agent any
   stages {
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/mlowe9999/jenkins-kubernetes-deployment.git'
+        git url: 'https://github.com/mlowe9999/jenkins-kubernetes-deployment.git',
+            credentialsId: "${githubCredential}"  // Use GitHub credentials for checkout
       }
     }
     stage('Build image') {
