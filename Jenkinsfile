@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    dockerimagename = "mlowe9999/react-app"
+    dockerimagename = "bravinwasike/react-app"
     dockerImage = ""
     githubCredential = 'github-credentials'
   }
